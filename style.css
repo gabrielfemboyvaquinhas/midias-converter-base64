@@ -124,6 +124,68 @@ body {
     }
 }
 
+.language-selector {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 30px;
+    padding-bottom: 25px;
+    border-bottom: 2px solid #e5e7eb;
+}
+
+.lang-btn {
+    background: white;
+    border: 3px solid transparent;
+    border-radius: 12px;
+    padding: 8px;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+.lang-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 0;
+}
+
+.lang-btn:hover::before {
+    opacity: 0.1;
+}
+
+.lang-btn.active {
+    border-color: #667eea;
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+    transform: translateY(-2px);
+}
+
+.lang-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(102, 126, 234, 0.25);
+}
+
+.lang-btn:active {
+    transform: translateY(-1px);
+}
+
+.flag-icon {
+    width: 45px;
+    height: 32px;
+    display: block;
+    border-radius: 4px;
+    position: relative;
+    z-index: 1;
+}
+
 .logo-container {
     text-align: center;
     margin-bottom: 25px;
