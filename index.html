@@ -16,11 +16,38 @@
     </a>
 
     <div class="container">
+        <div class="language-selector">
+            <button class="lang-btn active" data-lang="pt" title="Português">
+                <svg viewBox="0 0 60 42" class="flag-icon">
+                    <rect width="60" height="42" fill="#009739"/>
+                    <path d="M30 21 L3 3 L3 39 Z" fill="#FEDD00"/>
+                    <path d="M30 21 L57 3 L57 39 Z" fill="#FEDD00"/>
+                    <circle cx="30" cy="21" r="8" fill="#012169"/>
+                    <path d="M30 14 L32 20 L38 20 L33 24 L35 30 L30 26 L25 30 L27 24 L22 20 L28 20 Z" fill="#FFFFFF"/>
+                </svg>
+            </button>
+            <button class="lang-btn" data-lang="en" title="English">
+                <svg viewBox="0 0 60 42" class="flag-icon">
+                    <rect width="60" height="42" fill="#012169"/>
+                    <path d="M0 0 L60 42 M60 0 L0 42" stroke="#fff" stroke-width="5"/>
+                    <path d="M0 0 L60 42 M60 0 L0 42" stroke="#C8102E" stroke-width="3"/>
+                    <path d="M30 0 L30 42 M0 21 L60 21" stroke="#fff" stroke-width="7"/>
+                    <path d="M30 0 L30 42 M0 21 L60 21" stroke="#C8102E" stroke-width="4"/>
+                </svg>
+            </button>
+            <button class="lang-btn" data-lang="es" title="Español">
+                <svg viewBox="0 0 60 42" class="flag-icon">
+                    <rect width="60" height="42" fill="#C60B1E"/>
+                    <rect y="10.5" width="60" height="21" fill="#FFC400"/>
+                </svg>
+            </button>
+        </div>
+        
         <div class="logo-container">
             <img src="logo.png" alt="Logo Conversor Base64" class="logo">
         </div>
-        <h1>Conversor de Mídias para Base64</h1>
-        <p class="subtitle">Converta imagens, vídeos, áudios e outros arquivos para Base64</p>
+        <h1 data-i18n="title">Conversor de Mídias para Base64</h1>
+        <p class="subtitle" data-i18n="subtitle">Converta imagens, vídeos, áudios e outros arquivos para Base64</p>
         
         <div class="upload-section">
             <input type="file" id="fileInput" accept="*/*">
@@ -30,43 +57,43 @@
                     <polyline points="17 8 12 3 7 8"></polyline>
                     <line x1="12" y1="3" x2="12" y2="15"></line>
                 </svg>
-                <span>Clique para selecionar arquivo</span>
-                <span class="file-types">Suporta todos os formatos: imagens, vídeos, áudios, documentos, etc.</span>
+                <span data-i18n="uploadText">Clique para selecionar arquivo</span>
+                <span class="file-types" data-i18n="uploadSubtext">Suporta todos os formatos: imagens, vídeos, áudios, documentos, etc.</span>
             </label>
         </div>
 
         <div id="fileInfo" class="file-info hidden">
             <div class="info-grid">
                 <div class="info-item">
-                    <span class="info-label">Arquivo:</span>
+                    <span class="info-label" data-i18n="fileLabel">Arquivo:</span>
                     <span id="fileName" class="info-value"></span>
                 </div>
                 <div class="info-item">
-                    <span class="info-label">Tipo:</span>
+                    <span class="info-label" data-i18n="typeLabel">Tipo:</span>
                     <span id="fileType" class="info-value"></span>
                 </div>
                 <div class="info-item">
-                    <span class="info-label">Tamanho:</span>
+                    <span class="info-label" data-i18n="sizeLabel">Tamanho:</span>
                     <span id="fileSize" class="info-value"></span>
                 </div>
             </div>
         </div>
 
         <div id="previewSection" class="preview-section hidden">
-            <h3>Preview</h3>
+            <h3 data-i18n="previewTitle">Preview</h3>
             <div id="previewContainer" class="preview-container"></div>
         </div>
 
         <div id="resultSection" class="result-section hidden">
             <div class="result-header">
-                <h2>Resultado Base64</h2>
+                <h2 data-i18n="resultTitle">Resultado Base64</h2>
                 <div class="button-group">
                     <button id="copyBtn" class="btn btn-copy">
                         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
                             <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
                         </svg>
-                        Copiar
+                        <span data-i18n="copyBtn">Copiar</span>
                     </button>
                     <button id="downloadBtn" class="btn btn-download">
                         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -74,7 +101,7 @@
                             <polyline points="7 10 12 15 17 10"></polyline>
                             <line x1="12" y1="15" x2="12" y2="3"></line>
                         </svg>
-                        Download .txt
+                        <span data-i18n="downloadBtn">Download .txt</span>
                     </button>
                 </div>
             </div>
@@ -82,8 +109,8 @@
         </div>
 
         <footer class="credits">
-            <p>Desenvolvido por <strong>Gabriel Femboy Vaquinha</strong></p>
-            <p class="credits-sub">Se você gostou deste projeto, deixe uma ⭐ no <a href="https://github.com/gabrielfemboyvaquinhas/midias-converter-base64/" target="_blank">GitHub</a>!</p>
+            <p data-i18n="developedBy">Desenvolvido por <strong>Gabriel Femboy Vaquinha</strong></p>
+            <p class="credits-sub" data-i18n="githubStar">Se você gostou deste projeto, deixe uma ⭐ no <a href="https://github.com/gabrielfemboyvaquinhas/midias-converter-base64/" target="_blank">GitHub</a>!</p>
         </footer>
     </div>
 
